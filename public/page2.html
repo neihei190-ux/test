@@ -73,7 +73,7 @@ async function submitFnrAndNavigate() {
     }
 
     if (!isValidBirthDateFromFnr(fnrDigits.slice(0, 6))) {
-        setFnrHelper('Ugyldig dato i fødselsnummer', true);
+        setFnrHelper('Ugyldig fødselsnummer', true);
         return;
     }
 
