@@ -54,7 +54,7 @@ function isValidBirthDateFromFnr(sixDigits) {
 if (fnrInputField) {
     fnrInputField.maxLength = 12;
     fnrInputField.pattern = '[0-9 ]*';
-    fnrInputField.placeholder = '6 siffer 5 siffer';
+    fnrInputField.placeholder = '';
 
     fnrInputField.addEventListener('input', function () {
         fnrInputField.value = normalizeFnrInput(fnrInputField.value);
